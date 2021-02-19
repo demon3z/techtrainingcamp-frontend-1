@@ -1,0 +1,33 @@
+.videoSidebar {
+  position: absolute;
+  top: 35%;
+  right: 2%;
+  color: white;
+}
+
+.videoSidebar-button {
+  color: rgba($color: white, $alpha: 0.8);
+  padding: 5px 0px;
+  text-align: center;
+  font-size: xx-large;
+  margin-top: 5px;
+  p {
+    font-size: small;
+    text-align: center;
+    // margin: 0%;
+    // padding: 0%;
+  }
+  // 为了和心形动画大小一致
+  .profile {
+    width: 50px;
+    height: 40px;
+    margin-bottom: 7px;
+    img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      border: solid honeydew 2px;
+      margin-bottom: 5px;
+    }
+  }
+}
