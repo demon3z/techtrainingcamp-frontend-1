@@ -1,25 +1,31 @@
 .NavBar {
   display: flex;
-  //  text-align: center;
+  justify-content:center;
   position: fixed;
   width: 100%;
   top: 0%;
-  margin-top: 0%;
 }
 
-a {
+// 顶部导航栏选项
+.navBarOptions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+}
+
+.navBarOptions a {
   color: rgba(255,255,255,0.5);
-  // display: inline-block;
-  width: 10%;
+  width: 34.6px;
   margin: 5%;
   text-align: center;
   font-size: 16px;
   font-weight: bold;
- //a 标签和class在同一级用&
+ //a 标签和class在同一级
  &.checked{
    color: white;
-   // text-decoration: underline;
-   padding-bottom: 3%;
+   padding-bottom: 11px;
    border-bottom: 2px solid white;
  }
  &.searchButton{

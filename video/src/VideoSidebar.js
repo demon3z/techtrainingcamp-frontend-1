@@ -7,6 +7,7 @@ import LikeButton from "./component/LikeButton"
 function VideoSidebar({ icon, likes, shares, comments}) {
   const [liked, setLiked] = useState(false);
 
+  // 评论数超过一万
   function num2string(n) {
     if (n > 9999)
       return String(Math.floor( n / 10000)) + 'w';

@@ -1,44 +1,54 @@
 .TabBar {
   display: flex;
+  justify-content: center;
   position: fixed;
   width: 100%;
   bottom: 0%;
+}
 
-  a {
-    color: rgba(255,255,255,0.5);
-    width: 10%;
-    margin: 1% 5%;
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    // a 标签和class在同一级用
-    &.checked {
-      color: white;
-      padding-bottom: 3%;
-      border-bottom: 2px solid white;
-    }
-    &.upLoad {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 30px;
-      width: 37px;
-      color: white;
-      // border: 3px solid white;
-      border-left: 3px solid #03a9f4;
-      border-right: 3px solid #f50057;
-      border-radius: 25%;
-    }
-    div {
-      height: 71%;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 3px solid white;
-      border-radius: 20%;
-    }
+// 底部导航栏选项
+.tabBarOptions{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+}
+
+.tabBarOptions a {
+  color: rgba(255,255,255,0.5);
+  width: 34.6px;
+  margin-bottom: 18.75px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  // a 标签和class在同一级
+  &.checked {
+    color: white;
+    padding-bottom: 3%;
+    border-bottom: 2px solid white;
   }
+  // 上传视频标志
+  &.upLoad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 37px;
+    color: white;
+    border-left: 3px solid #03a9f4;
+    border-right: 3px solid #f50057;
+    border-radius: 25%;
+  }
+}
+.uploadInner {
+  height: 71%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid white;
+  border-radius: 20%;
 }
 
 

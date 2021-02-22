@@ -4,11 +4,6 @@ import Lottie from 'react-lottie'
 import LottieAnimationData from './animation-cd.json'
 
 const MusicRecord = (props) => {
-// function MusicRecord(props) {
-  // const [isHidden, setHidden] = useState(props.ishidden)
-  // const [Paused, setPaused] = useState(false);
-  // console.log(0, props.playing);
-
   // 配置动效的渲染选项
   const defaultOptions = {
     loop: true,
