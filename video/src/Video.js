@@ -1,21 +1,30 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useReducer, useRef, useState } from "react";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 import "./Video.scss";
-// import Xgplayer from 'xgplayer-react';
-import MusicRecord from "./component/MusicRecord"
-
-
+import MusicRecord from "./component/MusicRecord";
+// import ReactDOM from "react-dom"
 
 // 视频播放,底部信息,侧边点赞评论转发
 // 视频暂停时,CD暂停旋转
-function Video({ index, currentItem, url, author, description, tagList, icon, likes, comments, shares, bgm }) {
+function Video (props) {
+  let videoRef = useRef(null);
+  // console.log(props)
+  let{ url, height, author, description, tagList, icon, likes, comments, shares, bgm } = props
   const [playing, setPlaying] = useState(false);
-  // if(index===currentItem)
-  //   setPlaying(true);
 
-  const videoRef = useRef(null);
-  // console.log(currentItem, index)
+  const viewRef = useRef(null);
+  // viewRef.style.height = height + 'px';
+  // console.log(groupName, author, 1,curPlaySrc, 2,url);
+  // useEffect(() => {
+  //   // 当应该播放的视频的url等于此视频组件的src时,播放该视频
+  //   if(curPlaySrc === url) {
+  //     setPlaying(true)
+  //     videoRef.current.play();
+  //   }
+  // }, [curPlaySrc])
+  
+  // 点击视频,在播放与暂停之间切换
   const onVideoPress = () => {
     if (playing) {
       videoRef.current.pause();
@@ -25,19 +34,6 @@ function Video({ index, currentItem, url, author, description, tagList, icon, li
       setPlaying(true);
     }
   };
-
-  // 西瓜播放器配置
-  // let config = {
-  //   id: 'mse',
-  //   url: url,
-  //   controls: false,
-  //   width: '100%',
-  //   height: '100%',
-  //   autoplay: false,
-  //   loop: true,
-  //   videoInit: true,
-  // };
-  // let Player = null;
   
   // 生成 #tag #tag
   function createTag(tagList){
@@ -47,18 +43,16 @@ function Video({ index, currentItem, url, author, description, tagList, icon, li
   }
 
   return (
-    <div className="video">
+    <div style={height={height}} className="Video">
       <video
         className="video-player"
         // autoPlay
-        // muted
+        muted
         loop
         onClick={onVideoPress}
         ref={videoRef}
         src={url}
-         
-      ></video>
-      {/* <Xgplayer config={config} playerInit={(player)=>{ Player = player; }} /> */}
+      />
       
       <div className="video-pause" 
         style={{display:playing ? "none" : "block"}}
