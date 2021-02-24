@@ -1,6 +1,8 @@
-后端代码部署在轻服务上 **https://qingfuwu.cn/**，云函数名即文件名。
+后端代码部署在轻服务上, 云函数名称即文件名.
 
-轻服务项目名： Tiktok demo backend
+轻服务: https://qingfuwu.cn
+
+轻服务项目名: Tiktok demo backend
 
 ## 数据库
 
