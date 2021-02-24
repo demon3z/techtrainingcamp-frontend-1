@@ -1,28 +1,16 @@
-import React, { useEffect, useReducer, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 import "./Video.scss";
 import MusicRecord from "./component/MusicRecord";
-// import ReactDOM from "react-dom"
+// import Xgplayer from 'xgplayer-react';
 
-// 视频播放,底部信息,侧边点赞评论转发
+// 视频播放组件,底部信息,侧边点赞评论转发
 // 视频暂停时,CD暂停旋转
 function Video (props) {
   let videoRef = useRef(null);
-  // console.log(props)
-  let{ url, height, author, description, tagList, icon, likes, comments, shares, bgm } = props
-  const [playing, setPlaying] = useState(false);
-
-  const viewRef = useRef(null);
-  // viewRef.style.height = height + 'px';
-  // console.log(groupName, author, 1,curPlaySrc, 2,url);
-  // useEffect(() => {
-  //   // 当应该播放的视频的url等于此视频组件的src时,播放该视频
-  //   if(curPlaySrc === url) {
-  //     setPlaying(true)
-  //     videoRef.current.play();
-  //   }
-  // }, [curPlaySrc])
+  let{ id, url, height, author, description, tagList, icon, likes, comments, shares, bgm } = props
+  const [playing, setPlaying] = useState(true);
   
   // 点击视频,在播放与暂停之间切换
   const onVideoPress = () => {
@@ -46,14 +34,13 @@ function Video (props) {
     <div style={height={height}} className="Video">
       <video
         className="video-player"
-        // autoPlay
-        muted
+        autoPlay
+        // muted
         loop
         onClick={onVideoPress}
         ref={videoRef}
         src={url}
       />
-      
       <div className="video-pause" 
         style={{display:playing ? "none" : "block"}}
         onClick={onVideoPress}
@@ -64,7 +51,7 @@ function Video (props) {
         author={author} description={description} tagList={createTag(tagList)}
         bgm={bgm}
       />
-      <VideoSidebar icon={icon} likes={likes} comments={comments} shares={shares}/>
+      <VideoSidebar id={id} icon={icon} likes={likes} comments={comments} shares={shares}/>
       <div className="music-record">
         <MusicRecord playing={playing}/>
       </div>

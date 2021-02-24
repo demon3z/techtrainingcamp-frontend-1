@@ -17,18 +17,10 @@ html {
   max-width: 544px;
   // width: 100%;
   overflow: scroll;
-  // display: flex;
-  // flex-wrap: wrap;
-  // overflow-y: scroll;
-  // overflow-x: hidden;
-  // max-width: 500px;
   scroll-snap-type: y mandatory;
   
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  ::-webkit-scrollbar {
-    display: none;
-  }
 }
 
 // 隐藏滚动条

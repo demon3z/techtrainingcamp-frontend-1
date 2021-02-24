@@ -1,5 +1,5 @@
 // CD旋转动效
-import React, { useState } from 'react'
+import React from 'react'
 import Lottie from 'react-lottie'
 import LottieAnimationData from './animation-cd.json'
 

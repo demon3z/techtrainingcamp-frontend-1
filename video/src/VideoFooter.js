@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./VideoFooter.scss";
-import MusicRecord from "./component/MusicRecord"
 
-// 左下侧信息栏:作者 描述 背景音乐 CD动效
+// 左下侧信息栏:作者 描述 背景音乐
 function VideoFooter({ author, description, tagList, bgm }) {
   return (
     <div className="videoFooter">

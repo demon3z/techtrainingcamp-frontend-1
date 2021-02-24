@@ -1,5 +1,5 @@
 // 点赞动效
-import React, { useState } from 'react'
+import React from 'react'
 import Lottie from 'react-lottie'
 
 import AnimationData from './8041-like-button.json'
